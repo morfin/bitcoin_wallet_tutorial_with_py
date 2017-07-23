@@ -16,7 +16,7 @@ This guide will assume that you know the basics of the following topics:
 * Asymmetric cryptography A.K.A Public Key Cryptography
 * Hashing
 
-In order to follow along, you'll need Python 2.7 and some crypto and bitcoin libraries:
+In order to follow along, you'll need Python 2.7 and some crypto/bitcoin libraries:
 
 ```sh
 $ pip install hashlib
