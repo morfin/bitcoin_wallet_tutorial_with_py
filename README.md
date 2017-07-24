@@ -20,7 +20,7 @@ $ pip install hashlib
 $ pip install pybitcointools 
 $ pip install pybitcoin
 ```
-Once those libraries are installed, you can just simply run the main.py:
+Once those libraries are installed, you can just simply run the main.py (Python 2.7):
 ```sh
 $ python main.py
 ```
