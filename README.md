@@ -27,6 +27,15 @@ Once those libraries are installed, you can just simply run the main.py:
 ```sh
 $ python main.py
 ```
+References & Resources:
+----
+* http://www.mobilefish.com/services/cryptocurrency/cryptocurrency.html
+* https://en.bitcoin.it/wiki/Wallet_import_format
+* https://github.com/vbuterin/pybitcointools
+* https://github.com/blockstack/pybitcoin
+* https://www.reddit.com/r/Bitcoin/comments/2u0tin/why_are_private_keys_called_compressed_if_theyre/
+
+
 Disclaimer:
 ----
 The provided code is only intended to show you the basics of a bitcoin wallet creation. Use the code at your own risk.
