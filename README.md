@@ -9,10 +9,7 @@ So most of the comments where extrated from that page.
 The procedural code demo will introduce you to all the concepts involved in the creation of a bitcoin wallet. If you follow the code step by step in main.py and utils.py, some of your basic questions regarding Private Keys, Public Keys, WIF's, uncompressed/compressed WIF's, etc. will be answered by looking at an actual implemenation.
 
 This guide will assume that you know the basics of the following topics:
-* base-2 (binary)
-* base-10 (decimal)
-* base-16 (hexadecimal)
-* base-64
+* Numeral systems: base-2 (binary), base-10 (decimal), base-16 (hexadecimal), base-58
 * Asymmetric cryptography A.K.A Public Key Cryptography
 * Hashing
 
