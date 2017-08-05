@@ -82,7 +82,7 @@ def public_address(public_key_version):
     public_key_checksum_c = public_key_version_hash_c + checksum_c
 
     # The Public Address uncompressed is the public_key_checksum_c value encoded into a
-    # Base58 value. The generated value can be made public and can be converted into QR codes
+    # Base58Check value. The generated value can be made public and can be converted into QR codes
     # for sharing it easily via wallet apps.
     #
     # It is recommended to always to use a compressed Public Key/Public Address and the corresponding

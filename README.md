@@ -31,7 +31,7 @@ References & Resources:
 * https://github.com/vbuterin/pybitcointools
 * https://github.com/blockstack/pybitcoin
 * https://www.reddit.com/r/Bitcoin/comments/2u0tin/why_are_private_keys_called_compressed_if_theyre/
-
+* https://www.anintegratedworld.com/how-to-manually-calculate-base58check-encoding/
 
 Disclaimer:
 ----

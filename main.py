@@ -50,6 +50,7 @@ private_key_with_version = '80' + private_key_hex
 # The private_key_wif_for_uncompressed value must be kept secret. It can be converted into QR codes
 # for paper wallets. The WIF private key (compressed or uncompressed) is the format used by wallet apps.
 # old versions of wallet apps don't support compressed wif.
+# This WIF type starts with  a "5".
 #
 # The WIF
 private_key_wif_for_uncompressed = utils.wif_private_key(private_key_with_version)
@@ -68,6 +69,7 @@ private_key_with_version_comp = private_key_with_version + '01'
 # The private_key_wif_for_compressed value must be kept secret. It can be converted into QR codes
 # for paper wallets. The WIF private key (compressed or uncompressed) is the one used by wallet apps.
 # old versions of wallet apps don't support compressed wif.
+# This WIF type starts with  a "K" or "L".
 
 # The WIF
 private_key_wif_for_compressed = utils.wif_private_key(private_key_with_version_comp)
@@ -90,7 +92,7 @@ private_key_wif_for_compressed = utils.wif_private_key(private_key_with_version_
 # resulting in smaller transactions on the network, saving block chain size for everyone.
 #
 # Some people say compressed keys are more secure, this is not true. It's all about optimization.
-#
+# It requires less computation and less space in the blockchain.
 
 # THE UNCOMPRESSED KEY
 #
@@ -101,7 +103,10 @@ private_key_wif_for_compressed = utils.wif_private_key(private_key_with_version_
 # how to generate an ECDSA public key. Although, you are invited to take a look at how
 # pybitcointools generates it.
 #
-# The following is the uncompressed public key, in hex encoding
+# The following is the uncompressed 65 bytes public key, in hex encoding
+# Why 65 bytes? The actual ECDSA public key is 64 bytes, but bitcoin protocol adds a prefix
+# to indicate if its uncompressed or compressed. In this case a "04" prefix.
+# That extra "04" is 1 byte.
 public_key_version = pybitcointools.privkey_to_pubkey(private_key_hex)
 
 # This will generate the hashed uncompressed public key,
@@ -114,16 +119,19 @@ public_address_uncompressed = utils.public_address(public_key_version)
 # THE COMPRESSED KEY
 # Compressed keys only specify the x coordinate plus an 1 byte
 # flag indicating which side of the symmetrical curve the point is on, which allows y to be derived.
-# In order to indicate that key is compressed, "04" prefix is added to the encoded hex value.
+# In order to indicate that key is compressed, "02" or "03" prefix is added to the encoded hex value.
+# The "02" and "03" is determined based on the the elliptic curve equation result.
 #
-# Public key with compression, in hex encoding
+# Public key with compression (32 bytes + 1 byte prefix = 33 bytes), in hex encoding
 public_key_version_comp = pybitcointools.compress(public_key_version)
 
 # This will generate the compressed public key,
 # that is, the "bitcoin address" that you share with others.
 # This is the modern and recommended format.
 #
-# The sharable bitcoin address:
+# The sharable bitcoin address (hashed public key for P2PKH script format, starts with 1).
+# There is a newer P2SH format, so addresses for transactions using this script format start
+# with number 3.
 public_address_compressed = utils.public_address(public_key_version_comp)
 
 # WE ARE DONE.
