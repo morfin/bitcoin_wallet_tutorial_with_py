@@ -5,7 +5,7 @@ import utils
 # EVERYTHING STARTS HERE: THE PRIVATE KEY AND DERIVED WIFs
 #
 # A private key is just a 256-bit (32 bytes) random number, usually represented as hexadecimal value,
-# that is, as a 64 characters (chars) long.
+# that is, as a 64 hexadecimal characters long.
 #
 # A valid Private Key must be in the interval [1, n - 1], where:
 # n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
